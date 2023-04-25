@@ -1,0 +1,345 @@
+$light-grey:    rgb(214, 212, 212); 
+@mixin bg-light-grey{
+    background: rgb(214, 212, 212);
+}
+@mixin bg-shadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.w100{
+    width: 100%;
+}
+.h100{
+    height: 100%;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   .header{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: black;
+        .left-bar{
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+            
+        }
+        .middle-bar{
+            display: flex;
+            justify-content: center;
+            width: 20%;
+            img{
+                width: 98px;
+                height: 68px;
+                border-radius: 18px;
+            }
+        }
+        .right-bar{
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+        }
+   }
+
+
+
+   .LoginIn-box{
+        width: 30vw;
+        margin: auto;
+        margin-top: 20vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include bg-shadow();
+        padding: 10px;
+        height: 50vh;
+        justify-content: space-around;
+        .StatusOfLoginin{
+            font-size: 1.4rem;
+        }
+        button{
+            width: 30%;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background: rgb(82, 116, 188);
+            color: white;
+            border: 0px;
+        }
+        input{
+            width: 50%;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+        .Create-an-account{
+            text-align: center;
+        }
+   }
+   .homepage-layout{
+    padding: 0;
+    margin: auto;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    .buttons-type{
+        width: 100%;
+        display: flex;
+
+        button{
+            background: white;
+            border: 0px solid white;
+            font-size: 1.2rem;
+            width:25%;
+            @include bg-light-grey();
+            padding:8px;
+            text-transform: uppercase;
+            font-weight: bold;
+
+         &.underlined{
+            border-bottom: 5px solid rgb(43, 101, 200);
+        }
+        }
+
+    }
+
+   }
+   .second-block{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+        .main-carousel{
+            width: 70%;
+            .Carousel{
+                width: 100%;
+            }
+        }
+        .sale-box{
+            width: 27%;
+            border: 1px solid $light-grey;
+            .random-good{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .random-good-top{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .sale{
+                        text-align: center;
+                        background: blue;
+                        color: white;
+                        font-size: 1.2rem;
+                        margin: 0;
+                        width: inherit;
+                    }
+                    .random-good-price{
+                        .price-box{
+                            text-align: center;
+                            .oldprice{
+                                text-decoration: line-through;
+                                opacity: 0.6;
+                                font-size: 1.2rem;
+                            }
+                            .discount-price{
+                                font-size: 1.3rem;
+                            }
+                            .newprice{
+                                font-size: 1.5rem;
+                                color: red;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+            .random-good-main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+                .random-good-image{
+                    width: 100%;
+                    height: 100%;
+                    max-height: 200px;
+                    max-width: 200px;
+
+                }
+                .random-good-name{
+                    text-align: center;
+                    margin-top: 5px;
+                    
+                }
+            }
+        }
+   }
+   .third-block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5vh;
+
+        .main-filter-top{
+            margin: 2vh 0;
+            display: flex;
+            justify-content: space-evenly;
+            button{
+                padding: 5px;
+                border-radius: 8px;
+                width: 20vw;
+                border: 2px solid $light-grey;
+            }
+        }
+        .main-filter-bot{
+            @extend .main-filter-top;
+            button{
+                @extend button
+            }
+        }
+
+        .all-goods-list{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 1vh;
+            border-radius: 8px;
+            padding: 5px;
+            border: 2px solid $light-grey;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: 20px;
+            .goods-box{
+                display: flex;
+                width: 100%;
+                height: 40vh;
+                margin-bottom: 5vh;
+                border: 3px solid $light-grey;
+                border-radius: 16px;
+                padding: 8px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+                .goods-left-bar{
+                    width: 20%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .goods-main-image{
+                        text-align: center;
+                        height: 80%;
+                        max-width: 80%;
+                    }
+                }
+                .goods-middle-bar{
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 8px;
+                    justify-content: space-around;
+
+                    .goods-title-top{
+                        font-size: 1.2rem;
+                        color: rgb(87, 121, 133);
+                        cursor: pointer;
+                        &:hover{
+                            color:  rgb(85, 187, 224);;
+                        }
+                    }
+                    .goods-description{
+                        overflow: auto;
+                    }
+                    .type-of-good{
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                }
+                .goods-right-bar{
+                    width: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .goods-main-price{
+                        font-size: 1.3rem;
+                        font-weight: 600;
+
+                    }
+                    .goods-rating{
+                        color: gold;
+                        scale: 1.9;
+                    }
+                    .goods-amount{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+   }
+
+   .Reg-Form{
+    margin: auto;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    @include bg-shadow();
+    padding: 20px;
+    .Reg-message{
+        text-align: center;
+    }
+    .Reg-Form-title{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Reg-Fields{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label{
+            margin-top: 2vh;
+            align-self: flex-start;
+
+        }
+        input{
+            width: 100%;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid grey;
+            padding: 2px 5px;
+        }
+        button{
+            width: 50%;
+            margin-top: 3vh;
+            text-align: center;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 0;
+            background: rgb(113, 172, 224);
+            color: white;
+            font-size: 1.3rem;
+            &:active{
+                background: rgb(20, 95, 193);
+            }
+        }
+    }
+   }
+
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        transform: scale(1.1);
+        color: black;
+    }
+}
