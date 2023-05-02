@@ -25,6 +25,9 @@ try {
             if(responceLoginin.status==200){
                 seterrorMessage('Succesfully')
                 localStorage.setItem('userid', responceLoginin.data._id)
+                localStorage.setItem("FavoriteArray", JSON.stringify([]))
+                localStorage.setItem("BuyArray", JSON.stringify([]));
+
                 console.log(responceLoginin.data._id);
             } 
             if(responceLoginin.status===200){

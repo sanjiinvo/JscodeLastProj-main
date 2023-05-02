@@ -7,6 +7,8 @@ import OtherStores from "./OtherStores";
 import Signin from "./Signin";
 import Registration from "./Registration";
 import Profile from "./Profile";
+import GoodsCart from "./GoodsCart";
+import FavoriteGoods from "./FavoriteGoods";
 
 
 function RouterLayout() {
@@ -20,6 +22,10 @@ function RouterLayout() {
                     <Route path="signin" element={<Signin/>}/>
                     <Route path="registration" element={<Registration/>}/>
                     <Route path="profile/:userid" element={<Profile/>}/>
+                    <Route path="product/:goodsid" element={<GoodsCart/>}/>
+                    <Route path="product/:goodsid/favorite" element={<FavoriteGoods/>}/>
+
+
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -2,11 +2,15 @@
 
 
 function Profile () {
+
+    const showLog =()=>{
+        console.log(localStorage.getItem('FavoriteArray'));
+        console.log(localStorage.getItem('BuyArray'));
+        
+    }
     return(
         <div>
-            <h2>
-                Profile
-            </h2>
+            <button onClick={showLog}>Show</button>
         </div>
     )
 }

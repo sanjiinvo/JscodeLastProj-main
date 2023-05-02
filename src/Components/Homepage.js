@@ -12,6 +12,10 @@ function Homepage(){
     const [randomProductID, setRandomProducID] = useState(0)
     const [MaxElements, setMaxElements] = useState(5)
     const [defaultfilter, setdefaultfilter] = useState(true)
+    
+    
+
+    
     useEffect(()=>{
         getGoods()
     },[type, defaultfilter])
@@ -58,11 +62,9 @@ function Homepage(){
         return(
             <div className="price-box">
                 <div className="oldprice">
-                    {price.toFixed(2)}$
+                    {price.toFixed(2)}$  -{discount}%
                 </div>
-                <div className="discount-price">
-                    -{discount}%
-                </div>
+                   
                 <div className="newprice">
                     {newPrice}$
                 </div>
@@ -104,14 +106,18 @@ function Homepage(){
                 <MainCarousel/>
              </div>
              <div className="sale-box">  
+             <p className="sale">Акция</p>
                 <div className="random-good"> 
                     <div className="random-good-top">
-                        <p className="sale">Акция</p>
+                        
                             {allGoodsArray.length != 0 && <div className="random-good-price">{GetRandomDiscount(allGoodsArray[randomProductID].price)}</div>}
+                            {allGoodsArray.length != 0 && <div className="random-good-description">{allGoodsArray[randomProductID].description} </div>}
+
                     </div>
                     <div className="random-good-main">
                              {allGoodsArray.length != 0 && <img className="random-good-image" src={allGoodsArray[randomProductID].image}/>}
                              {allGoodsArray.length != 0 && <div className="random-good-name">{allGoodsArray[randomProductID].title} </div>}
+
 
                     </div>
                 </div>
