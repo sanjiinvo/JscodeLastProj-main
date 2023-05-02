@@ -30,10 +30,10 @@ function Homepage(){
         const responce = await axios.get(goodsURL) 
         if(responce.status === 200){
         setAllGoodsArray(responce.data) 
-        let randomproduct = getRandomNumber(0, responce.data.length)
+        let randomproduct = getRandomNumber(0, responce.data.length-1)
         
         while(!responce.data[randomproduct].price){
-                randomproduct = getRandomNumber(0, responce.data.length)
+                randomproduct = getRandomNumber(0, responce.data.length-1)
             }
             setRandomProducID(randomproduct)
               
@@ -127,10 +127,8 @@ function Homepage(){
                 <div  className="all-goods-list">
                     <div className="main-filter-top">
                         <button onClick={DownToPrice}>Sort by Down to price</button>
-                        <button onClick={DefaultFilter}>Default Filter</button>
                         <button onClick={UpToPrice}>Sort by Up to price</button>
-                    </div>
-                    <div className="main-filter-bot">
+                        <button onClick={DefaultFilter}>Default Filter</button>
                         <button onClick={DownToRate}>Sort by Down to Rate</button>
                         <button onClick={UpToRate}>Sort by Up to Rate</button>
                     </div>

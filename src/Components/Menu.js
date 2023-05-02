@@ -54,8 +54,8 @@ function Menu(){
         
         return(
             <div className="personal-icons">
-                <Link to={`/product/${userid}/favorite`} className="link"><HeartFill color="red" /></Link>
-                <Link  className='link privat-profile' to={`/profile/${user._id}`}><PersonCircle />  {user.userName}</Link>
+                <Link to={`/product/${userid}/favorite`} className="link favor-link"><HeartFill color="red" /></Link>
+                <Link  className='link privat-profile' to={`/profile/${user._id}`}><PersonCircle /> <div> {user.userName}</div></Link>
             </div>
         )
     }
@@ -81,7 +81,7 @@ function Menu(){
                         <div className="mob-menu-personal">
                         {localStorage.getItem('userid')?  <div className="mob-menu-persnoal-icons">
                         <Link to={`/product/${userid}/favorite`} className="link">Избранное</Link>
-                <Link  className='link privat-profile' to={`/profile/${user._id}`}>пользователь {user.userName}</Link>
+                <Link  className='link mob-privat-profile' to={`/profile/${user._id}`}>{user.userName}</Link>
                         </div> : <div><Link  className="Loginin link" to='signin'> Sign in</Link> </div> } 
                         </div>
                     </div>
@@ -97,7 +97,7 @@ function Menu(){
                     <Link to='/'><img src={logomain}/></Link>
                 </div>
                 <div className="right-bar">
-                    <Link className="link adress" to='/'>Москва, Ул.Рандом 31</Link>
+                    <Link className="link adress" to='/'>Ул.Рандом 31</Link>
                      {localStorage.getItem('userid')? HaveUser()  : NoUser() } 
                     
                 </div>

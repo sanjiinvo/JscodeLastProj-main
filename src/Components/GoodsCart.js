@@ -80,9 +80,9 @@ function GoodsCart (){
         {(typeof Goodsinfo === 'undefined' || Object.keys(Goodsinfo).length === 0)? <div>empty</div> : <div className="Goods-cart-container">{Goodsinfo.descriptio}
 
             <div className="goods-cart-left">
-                <div className="goods-cart-image-box">
+              
                     <img className="goods-cart-image" src={Goodsinfo.image}/>
-                    </div>
+                    
                 <div className="goods-cart-price">Price: {Goodsinfo.price}$</div>
 
 
